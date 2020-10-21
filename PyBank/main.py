@@ -20,9 +20,6 @@ with open(csvpath) as csvfile:
         # calculate the number of months on report
         months += 1
 
-        # calculate the sum of profits/loss on report
-        sum += float(row[1])
-
         # calculate the average of changes on report
         # create a new list that contains all the changes
         for monthly_changes in row:
