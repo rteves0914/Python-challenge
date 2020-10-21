@@ -23,12 +23,13 @@ with open(csvpath) as csvfile:
         # calculate the sum of profits/loss on report
         sum += float(row[1])
 
+        # calculate the average of changes on report
+        # create a new list that contains all the changes
+        for monthly_changes in row:
+            monthly_changes = []
 
     print(f"There are {months} months on this budget data.")
     print(f"The net total of the company is ${sum}.")
-
-    # calculate net profits/loss over entire time
-
 
     # calculate average change over entire time
 
