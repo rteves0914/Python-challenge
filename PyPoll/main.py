@@ -37,27 +37,28 @@ with open(csvpath) as csvfile:
             candidate_O +=1
 
     # calculate the percentage of vote that each candidate received
-    dec_C = (candidate_C / votes)
-    pct_C = "{:3%}".format(dec_C)
+    dec_C = float((candidate_C / votes) * 100)
+    dec_C = round(dec_C, 2)
 
-    dec_K = candidate_K / votes
-    pct_K = "{:3%}".format(dec_K)
+    dec_K = float((candidate_K / votes) * 100)
+    dec_K = round(dec_K, 2)
 
-    dec_L = candidate_L / votes
-    pct_L = "{:3%}".format(dec_L)
+    dec_L = float((candidate_L / votes) * 100)
+    dec_L = round(dec_L, 2)
 
-    dec_O = candidate_O / votes
-    pct_O = "{:3%}".format(dec_O)
+    dec_O = float((candidate_O / votes) * 100)
+    dec_O = round(dec_O, 2)
 
     # print out all the important information
+    #print(candidates)
     print("Here are the election results:")
     print("-------------")
     print(f"There were a total of {votes} votes casted in this election.")
     print("-------------")
-    print(f"Correy received {candidate_C} total votes, or {pct_C}.")
-    print(f"Khan received {candidate_K} votes, or {pct_K}.")
-    print(f"Li received {candidate_L} votes, or {pct_L}.")
-    print(f"O'Tooley received {candidate_O} votes, or {pct_O}.")
+    print(f"Correy received {candidate_C} total votes, or {dec_C}%.")
+    print(f"Khan received {candidate_K} votes, or {dec_K}%.")
+    print(f"Li received {candidate_L} votes, or {dec_L}%.")
+    print(f"O'Tooley received {candidate_O} votes, or {dec_O}%.")
     print("-------------")
 
     # print the winner of the election
