@@ -28,11 +28,9 @@ with open(csvpath) as csvfile:
         profit_list.append(int(row[1]))
 
         # calculate the average of changes on report
-
-
-        # create a new list that contains all the changes
-        for monthly_changes in row:
-            monthly_changes = []
+    profit_changes = []
+    for i in range((months)-1):
+        profit_changes.append((profit_changes[i+1])-(profit_list[i]))
 
     print(f"There are {months} months on this budget data.")
     print(f"The net total of the company is ${total_profits}.")
