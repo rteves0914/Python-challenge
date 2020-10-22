@@ -71,3 +71,19 @@ with open(csvpath) as csvfile:
     if candidate_O > candidate_C and candidate_K and candidate_L:
         winner = "O'Tooley"
     print(f"And the winner of the election is {winner}! Congratulations {winner}, and good job to the other candidates!")
+
+# create the exporting text file
+text_file = os.path.join("Analysis", "poll.txt")
+
+# create and open new text file in read mode
+with open(text_file, "w") as txtfile:
+    txtfile.write("Here are the election results:" "\n")
+    txtfile.write("--------------" "\n")
+    txtfile.write(f"There were a total of {votes} votes casted in this election." "\n")
+    txtfile.write("--------------" "\n")
+    txtfile.write(f"Correy received {candidate_C} total votes, or {dec_C}%." "\n")
+    txtfile.write(f"Khan received {candidate_K} votes, or {dec_K}%." "\n")
+    txtfile.write(f"Li received {candidate_L} votes, or {dec_L}%." "\n")
+    txtfile.write(f"O'Tooley received {candidate_O} votes, or {dec_O}%." "\n")
+    txtfile.write("-------------" "\n")
+    txtfile.write(f"And the winner of the election is {winner}! Congratulations {winner}, and good job to the other candidates!")

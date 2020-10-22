@@ -56,3 +56,17 @@ with open(csvpath) as csvfile:
     print(f"The average change per month is ${average_change}.")
     print(f"The greatest increase in revenue is ${increase_change} and occurred in {increase_date}.")
     print(f"The greatest decrease in revenue is ${decrease_change} and occurred in {decrease_date}.")
+
+# create the exporting text file
+text_file = os.path.join("Analysis", "budget.txt")
+
+# create and open new text file in read mode
+with open(text_file, "w") as txtfile:
+    txtfile.write("Here is the financial analysis:" "\n")
+    txtfile.write("--------------" "\n")
+    txtfile.write(f"There are a total of {months} months on this budget data." "\n")
+    txtfile.write("--------------" "\n")
+    txtfile.write(f"The net total of the company is ${total_profits}." "\n")
+    txtfile.write(f"The average change per month is ${average_change}." "\n")
+    txtfile.write(f"The greatest increase in revenue is ${increase_change} and occurred in {increase_date}." "\n")
+    txtfile.write(f"The greatest decrease in revenue is ${decrease_change} and occurred in {decrease_date}." "\n")
